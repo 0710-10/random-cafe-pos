@@ -1,0 +1,632 @@
+html,
+body {
+  background-color: #f5efe7 !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f5efe7;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "HonyaJi";
+  src: url('fonts/HonyaJi-Re.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "KeiJi";
+    src: url('fonts/Kei_Ji.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Cafe Theme Colors */
+.bg-brown {
+  background-color: #8b5a2b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Button Styles with Cafe Theme */
+.btn-brown,
+.btn-primary {
+  background-color: #ab8b7b !important;
+  border-color: #ab8b7b !important;
+  color: white !important;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-brown:hover,
+.btn-primary:hover {
+  background-color: #8b5a2b !important;
+  border-color: #8b5a2b !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-brown:active,
+.btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-brown {
+  color: #8b5a2b !important;
+  border-color: #8b5a2b !important;
+  transition: all 0.15s ease;
+}
+
+.btn-outline-brown:hover {
+  background-color: #8b5a2b !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-brown:active {
+  transform: scale(0.96);
+}
+
+/* Main Container */
+.container {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Toast Notification - Bottom Right with Cafe Theme */
+.toast {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  min-width: 300px !important;
+}
+
+/* Success toast - Cafe brown */
+.toast.bg-success {
+  background-color: #b08c6a !important;
+  color: white !important;
+}
+
+/* Error toast - Darker brown for contrast */
+.toast.bg-danger {
+  background-color: #8b5a2b !important;
+  color: white !important;
+}
+
+.toast .btn-close {
+  filter: brightness(0) invert(1) !important;
+}
+
+.toast .toast-body {
+  font-weight: 500;
+  padding: 12px 16px;
+}
+
+/* Badge */
+.badge.bg-brown {
+  background-color: #8b5a2b !important;
+}
+
+/* Border Colors */
+.border-brown {
+  border-color: #8b5a2b !important;
+}
+
+/* Collapsible menu */
+.menu-panel {
+  position: fixed;
+  top: 72px;
+  right: 12px;
+  width: 260px;
+  background-color: #b08c6a;
+  display: none;
+  flex-direction: column;
+  z-index: 1050;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.menu-panel.show {
+  display: flex;
+}
+
+.menu-panel a {
+  padding: 18px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.479);
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.menu-panel a:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.menu-panel a:active {
+  transform: scale(0.97);
+}
+
+/* Table styling */
+/* Table rounded corners - Add these styles */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead {
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.table thead tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.table thead tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+/* Ensure the bottom border radius is visible */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Add subtle border to table */
+.table-responsive {
+    border: 1px solid rgba(139, 90, 43, 0.2);
+}
+
+/* Enhance table header appearance */
+.table-cafe thead th {
+    padding: 16px 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+/* Table body cells */
+.table tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(139, 90, 43, 0.1);
+    vertical-align: middle;
+}
+
+/* Remove border from last row */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Sort indicator styling - Update these */
+.sort-asc, .sort-desc {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.sort-asc::after {
+    content: '↑';
+    position: absolute;
+    right: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.sort-desc::after {
+    content: '↓';
+    position: absolute;
+    right: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Remove the old .sort-arrow class if exists */
+.sort-arrow {
+    display: none;
+}
+
+/* Hover effect for sortable headers */
+thead th[onclick]:hover {
+    background-color: rgba(139, 90, 43, 0.35) !important;
+}
+
+.table-cafe thead th {
+  background-color: #8b5a2b !important;
+  color: white !important;
+  border-color: #6f4421 !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  background-color: rgba(139, 90, 43, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(139, 90, 43, 0.1) !important;
+}
+
+/* Form styling */
+.form-control:focus {
+  border-color: #8b5a2b;
+  box-shadow: 0 0 0 0.25rem rgba(139, 90, 43, 0.25);
+}
+
+/* Category Dropdown */
+.category-dropdown .dropdown-toggle {
+  background-color: #8b5a2b;
+  border-color: #8b5a2b;
+  color: white;
+}
+
+.category-dropdown .dropdown-toggle:hover {
+  background-color: #6f4421;
+  border-color: #6f4421;
+}
+
+.category-dropdown .dropdown-menu {
+  background-color: #f5efe7;
+  border-color: #8b5a2b;
+}
+
+.category-dropdown .dropdown-item:hover {
+  background-color: rgba(139, 90, 43, 0.1);
+}
+
+.category-dropdown .dropdown-item.active {
+  background-color: #8b5a2b;
+  color: white;
+}
+
+/* Search Area */
+.input-group-text.bg-brown {
+  background-color: #8b5a2b;
+  color: white;
+  border: 1px solid #8b5a2b;
+}
+
+/* Product Image */
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+}
+
+/* Add custom modal styles to match takeorders.php */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal content styling - NO HEADER */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background-color: #cbc0b5;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none !important; 
+  border-radius: 12px !important; 
+  overflow: hidden !important;   
+}
+
+.modal-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modal-dialog {
+  transform: scale(0.9);
+  transition: transform 0.2s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* Modal body styling - Full body */
+.modal-body {
+  padding: 25px;
+  background-color: #cbc0b5;
+  border-radius: 12px;
+}
+
+/* Modal title - Centered and bold */
+.modal-title {
+  font-weight: bold;
+  text-align: center;
+  color: #5a3c1f;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Image preview styling */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 3px solid #8b5a2b;
+  border-radius: 10px;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+}
+
+/* Form controls styling */
+.form-control,
+.form-select {
+  background-color: #f5efe7;
+  border: 1px solid #8b5a2b;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: white;
+  border-color: #8b5a2b;
+  box-shadow: 0 0 0 0.25rem rgba(139, 90, 43, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #5a3c1f;
+  margin-bottom: 8px;
+}
+
+.form-text {
+  color: #8b5a2b;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Button styling to match takeorders.php - Updated colors */
+.btn-brown {
+  background-color: #ab8b7b;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-brown:hover {
+  background-color: #8b5a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.btn-brown:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn-danger {
+  background-color: #8b5a2b !important; /* Changed from red to cafe brown */
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-danger:hover {
+  background-color: #7a4a1b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #a99b8f;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:hover {
+  background-color: #8b7c70;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Image preview container */
+.image-preview-container {
+  background-color: rgba(139, 90, 43, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Toast styling */
+.toast {
+  background-color: #b08c6a !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.toast .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Product image in table */
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #8b5a2b;
+}
+
+/* Warning icon color */
+.text-danger {
+  color: #8b5a2b !important; /* Changed from red to cafe brown */
+}
+
+/* Button container styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(139, 90, 43, 0.2);
+}
+
+/* Table action buttons styling */
+#productTable .btn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#productTable .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#productTable .btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Modify button */
+#productTable .btn:first-child {
+  background-color: #ab8b7b;
+  color: white;
+}
+
+#productTable .btn:first-child:hover {
+  background-color: #9a7a6a;
+}
+
+/* Remove button */
+#productTable .btn:last-child {
+  background-color: #8b5a2b;
+  color: white;
+}
+
+#productTable .btn:last-child:hover {
+  background-color: #7a4a1b;
+}
+
+/* Close button for modals */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8b5a2b;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.modal-close-btn:hover {
+  opacity: 1;
+}
+
+.sort-asc, .sort-desc {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sort-asc::after, .sort-desc::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+}
+
+.sort-asc {
+    background-color: rgba(139, 90, 43, 0.2) !important;
+}
+
+.sort-desc {
+    background-color: rgba(139, 90, 43, 0.15) !important;
+}
+
+.sort-arrow {
+    font-weight: bold;
+    color: white;
+    margin-left: 5px;
+}
+
+/* Hover effect for sortable headers */
+thead th[onclick]:hover {
+    background-color: rgba(139, 90, 43, 0.25) !important;
+}
